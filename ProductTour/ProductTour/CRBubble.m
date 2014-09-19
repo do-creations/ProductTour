@@ -31,7 +31,7 @@
             self.color=COLOR_GLUE_BLUE;
         self.attachedView = view;
         self.title = title;
-        self.description = description;
+        self.bubbleDescription = description;
         self.arrowPosition = arrowPosition;
         [self setBackgroundColor:[UIColor clearColor]];
     }
@@ -51,7 +51,7 @@
     
     
     
-    stringArray=[self.description componentsSeparatedByString:@"\n"];
+    stringArray=[self.bubbleDescription componentsSeparatedByString:@"\n"];
     
     for (NSString *descriptionLine in stringArray) {
         
