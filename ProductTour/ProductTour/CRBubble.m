@@ -8,17 +8,18 @@
 
 #import "CRBubble.h"
 #define CR_ARROW_SPACE 10
-#define CR_ARROW_SIZE 12
-#define CR_PADDING 8
+#define CR_ARROW_SIZE 16
+#define CR_PADDING 12
 #define CR_RADIUS 6
 #define COLOR_GLUE_BLUE [UIColor colorWithRed:0.0 green:0.48 blue:1.0 alpha:1.0]
 #define COLOR_DARK_GRAY [UIColor colorWithWhite:0.13 alpha:1.0]
-#define CR_TITLE_FONT_SIZE 24
-#define CR_DESCRIPTION_FONT_SIZE 14
+#define CR_TITLE_FONT_SIZE 12
+#define CR_DESCRIPTION_FONT_SIZE 12
 
 #define SHOW_ZONE NO
 
 @implementation CRBubble
+
 
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)description arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color
 {

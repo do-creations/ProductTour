@@ -27,7 +27,9 @@ typedef enum {
 @property (nonatomic, strong) NSString *bubbleDescription;
 @property (nonatomic, assign) CRArrowPosition arrowPosition;
 @property (nonatomic, strong) UIColor *color;
+
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)description arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color;
 -(CGSize)size;
 -(CGRect)frame;
+-(CGSize) offsets;
 @end
