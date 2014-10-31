@@ -6,7 +6,8 @@ Pod::Spec.new do |s|
   s.homepage              = 'https://github.com/LukeDurrant/ProductTour'
   s.source                = { :git => 'https://github.com/LukeDurrant/ProductTour', :tag => s.version.to_s }
   s.source_files          = '*.{h,m}'
-  s.resource_bundles      = 'ProductTour/ProductTour*.{h,m}'
   s.requires_arc          = true
+  s.frameworks = 'CoreGraphics', 'UIKit'
+
 
 end
