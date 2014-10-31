@@ -5,7 +5,9 @@ Pod::Spec.new do |s|
   s.summary               = "Quick Product Tour."
   s.homepage              = 'https://github.com/LukeDurrant/ProductTour'
   s.source                = { :git => 'https://github.com/LukeDurrant/ProductTour', :tag => s.version.to_s }
-  s.source_files          = '*.{h,m}'
+  s.source_files  = "ProductTour/ProductTour", "ProductTour/ProductTour/**/*.{h,m}"
+  s.exclude_files = "ProductTour/ProductTour/Exclude"
+
   s.requires_arc          = true
   s.frameworks = 'CoreGraphics', 'UIKit'
 
