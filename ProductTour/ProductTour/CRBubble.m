@@ -21,7 +21,7 @@
 @implementation CRBubble
 
 
--(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)description arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color
+-(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color
 {
     self = [super init];
     if(self)
@@ -32,7 +32,7 @@
             self.color=COLOR_GLUE_BLUE;
         self.attachedView = view;
         self.title = title;
-        self.bubbleDescription = description;
+        self.bubbleDescription = bubbleDescription;
         self.arrowPosition = arrowPosition;
         [self setBackgroundColor:[UIColor clearColor]];
     }
@@ -42,7 +42,7 @@
     float actualWidth =self.frame.size.width;
     float actualHeight = CR_TITLE_FONT_SIZE;
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(actualXPosition, actualYPosition, actualWidth, actualHeight)];
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(actualXPosition, actualYPosition, actualWidth, actualHeight)];
     [titleLabel setTextColor:[UIColor blackColor]];
     [titleLabel setAlpha:0.6];
     [titleLabel setFont:[UIFont fontWithName:@"BebasNeue" size:CR_TITLE_FONT_SIZE]];

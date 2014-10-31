@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#define CR_ARROW_SPACE 10
+#define CR_ARROW_SIZE 12
 
 @interface CRBubble : UIView
 {
     NSArray *stringArray;
     int maxWidth;
+    CGPoint isMoving;
+    int swipeXPosition;
+    int swipeYPosition;
+    
+    UILabel *titleLabel;
 }
 
 
@@ -27,8 +34,10 @@ typedef enum {
 @property (nonatomic, strong) NSString *bubbleDescription;
 @property (nonatomic, assign) CRArrowPosition arrowPosition;
 @property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) NSString *fontName;
 
--(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)description arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color;
+-(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color;
+
 -(CGSize)size;
 -(CGRect)frame;
 -(CGSize) offsets;
