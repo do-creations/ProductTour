@@ -20,14 +20,19 @@
 
 @implementation CRBubble
 
-
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color
 {
+    return [self initWithAttachedView:view title:title description:bubbleDescription arrowPosition:arrowPosition backgroundColor:color fontColor:COLOR_DARK_GRAY];
+};
+
+
+
+- (id)initWithAttachedView:(UIView *)view title:(NSString *)title description:(NSString *)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor *)backgroundColor fontColor:(UIColor *)fontColor {
     self = [super init];
     if(self)
     {
-        if(color!=nil)
-            self.color=color;
+        if(backgroundColor != nil)
+            self.color=backgroundColor;
         else
             self.color=COLOR_GLUE_BLUE;
         self.attachedView = view;

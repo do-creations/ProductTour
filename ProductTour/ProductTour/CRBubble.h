@@ -37,6 +37,7 @@ typedef enum {
 @property (nonatomic, strong) NSString *fontName;
 
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color;
+-(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor*)backgroundColor fontColor:(UIColor *)fontColor;
 
 -(CGSize)size;
 -(CGRect)frame;
