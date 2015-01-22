@@ -31,7 +31,7 @@
     self = [super init];
     if(self)
     {
-        if(backgroundColor != nil)
+        if(backgroundColor !=nil)
             self.color=backgroundColor;
         else
             self.color=COLOR_GLUE_BLUE;
@@ -67,7 +67,7 @@
         actualHeight =CR_DESCRIPTION_FONT_SIZE;
         
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(actualXPosition, actualYPosition, actualWidth, actualHeight+CR_ARROW_SPACE)];
-        [descriptionLabel setTextColor:COLOR_DARK_GRAY];
+        [descriptionLabel setTextColor:fontColor];
         [descriptionLabel setFont:[UIFont systemFontOfSize:CR_DESCRIPTION_FONT_SIZE]];
         [descriptionLabel setText:descriptionLine];
         [descriptionLabel setBackgroundColor:[UIColor clearColor]];
