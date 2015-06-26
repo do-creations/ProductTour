@@ -19,6 +19,8 @@
     int swipeYPosition;
     
     UILabel *titleLabel;
+    UIVisualEffectView *effectView;
+
 }
 
 
@@ -38,6 +40,7 @@ typedef enum {
 
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition andColor:(UIColor*)color;
 -(id)initWithAttachedView:(UIView*)view title:(NSString*)title description:(NSString*)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor*)backgroundColor fontColor:(UIColor *)fontColor;
+-(id)initWithAttachedView:(UIView *)view title:(NSString *)title description:(NSString *)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor *)backgroundColor fontColor:(UIColor *)fontColor viewEffect:(UIVisualEffect *) effect;
 
 -(CGSize)size;
 -(CGRect)frame;

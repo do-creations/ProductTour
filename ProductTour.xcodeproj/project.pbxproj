@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFF1911E1B3CF85F0014AD16 /* Stars_Shoot_Jets_in_Cosmic_Playground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFF1911D1B3CF85F0014AD16 /* Stars_Shoot_Jets_in_Cosmic_Playground.jpg */; };
 		EB686DE218ABCAA200BC11E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB686DE118ABCAA200BC11E5 /* Foundation.framework */; };
 		EB686DE418ABCAA200BC11E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB686DE318ABCAA200BC11E5 /* CoreGraphics.framework */; };
 		EB686DE618ABCAA200BC11E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB686DE518ABCAA200BC11E5 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFF1911D1B3CF85F0014AD16 /* Stars_Shoot_Jets_in_Cosmic_Playground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Stars_Shoot_Jets_in_Cosmic_Playground.jpg; sourceTree = "<group>"; };
 		EB686DDE18ABCAA200BC11E5 /* ProductTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB686DE118ABCAA200BC11E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB686DE318ABCAA200BC11E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 				EB686DF718ABCAA200BC11E5 /* CRViewController.m */,
 				EB686E1F18ACE69E00BC11E5 /* CRViewController2.h */,
 				EB686E2018ACE69E00BC11E5 /* CRViewController2.m */,
+				CFF1911D1B3CF85F0014AD16 /* Stars_Shoot_Jets_in_Cosmic_Playground.jpg */,
 				EB686DF918ABCAA200BC11E5 /* Images.xcassets */,
 				EB686DE818ABCAA200BC11E5 /* Supporting Files */,
 			);
@@ -259,6 +262,7 @@
 				EB686DFA18ABCAA200BC11E5 /* Images.xcassets in Resources */,
 				EB686DEC18ABCAA200BC11E5 /* InfoPlist.strings in Resources */,
 				EB686DF518ABCAA200BC11E5 /* Main.storyboard in Resources */,
+				CFF1911E1B3CF85F0014AD16 /* Stars_Shoot_Jets_in_Cosmic_Playground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

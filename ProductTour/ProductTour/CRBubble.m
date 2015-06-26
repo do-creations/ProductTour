@@ -25,16 +25,33 @@
     return [self initWithAttachedView:view title:title description:bubbleDescription arrowPosition:arrowPosition backgroundColor:color fontColor:COLOR_DARK_GRAY];
 };
 
+-(id)initWithAttachedView:(UIView *)view title:(NSString *)title description:(NSString *)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor *)backgroundColor fontColor:(UIColor *)fontColor viewEffect:(UIVisualEffect *) effect {
+    
+    id vista = [self initWithAttachedView:view title:title description:bubbleDescription arrowPosition:arrowPosition backgroundColor:backgroundColor fontColor:fontColor];
+    
+    effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    effectView.frame = self.bounds;
+    
+    return vista;
+}
 
 
 - (id)initWithAttachedView:(UIView *)view title:(NSString *)title description:(NSString *)bubbleDescription arrowPosition:(CRArrowPosition)arrowPosition backgroundColor:(UIColor *)backgroundColor fontColor:(UIColor *)fontColor {
+    
     self = [super init];
     if(self)
     {
-        if(backgroundColor !=nil)
+        if(backgroundColor !=nil){
+            
+            
             self.color=backgroundColor;
-        else
+        }
+        else{
             self.color=COLOR_GLUE_BLUE;
+            
+            
+        }
+        
         self.attachedView = view;
         self.title = title;
         self.bubbleDescription = bubbleDescription;
@@ -48,7 +65,7 @@
     float actualHeight = CR_TITLE_FONT_SIZE;
     
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(actualXPosition, actualYPosition, actualWidth, actualHeight)];
-    [titleLabel setTextColor:[UIColor blackColor]];
+    [titleLabel setTextColor:fontColor];//[UIColor blackColor]];
     [titleLabel setAlpha:0.6];
     [titleLabel setFont:[UIFont fontWithName:@"BebasNeue" size:CR_TITLE_FONT_SIZE]];
     [titleLabel setText:title];
@@ -83,6 +100,7 @@
         [self.attachedView addSubview:myview];
     }
     
+    self.clearsContextBeforeDrawing = NO;
     [self setFrame:[self frame]];
     [self setNeedsDisplay];
     return self;
@@ -143,6 +161,13 @@
     return CGSizeMake((self.arrowPosition==CRArrowPositionLeft)? CR_ARROW_SIZE : 0, (self.arrowPosition==CRArrowPositionTop)? CR_ARROW_SIZE : 0);
 }
 
+- (void)layoutSubviews {
+    if(effectView){
+        [self addSubview:effectView];
+        [self sendSubviewToBack:effectView];
+        self.clipsToBounds = YES;
+    }
+}
 
 - (void)drawRect:(CGRect)rect
 {
@@ -151,7 +176,7 @@
     CGContextSaveGState(ctx);
     
     
-    CGPathRef clippath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake([self offsets].width,[self offsets].height, [self size].width, [self size].height) cornerRadius:CR_RADIUS].CGPath;
+    CGMutablePathRef clippath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake([self offsets].width,[self offsets].height, [self size].width, [self size].height) cornerRadius:CR_RADIUS].CGPath;
     CGContextAddPath(ctx, clippath);
     
     CGContextSetFillColorWithColor(ctx, self.color.CGColor);
@@ -202,6 +227,15 @@
     [path fill]; // If you want it filled, or...
     [path stroke]; // ...if you want to draw the outline.
     CGContextRestoreGState(ctx);
+    
+    if(effectView){
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.frame = self.bounds;
+        CGPathAddPath(clippath, nil, path.CGPath);
+        maskLayer.path = clippath;
+        effectView.layer.mask = maskLayer;
+    }
+    
 }
 
 @end

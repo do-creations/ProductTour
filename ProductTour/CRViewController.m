@@ -29,9 +29,13 @@
     //You can set the bubble title font.
     //[bubbleButton1 setFontName:@"Baskerville"];
     
-    CRBubble *bubbleButton2 = [[CRBubble alloc] initWithAttachedView:_button2 title:@"2. The Second Button" description:@"Just click, nothing append" arrowPosition:CRArrowPositionLeft andColor:nil];
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     
-    CRBubble *bubbleButtonHelp = [[CRBubble alloc] initWithAttachedView:_buttonHelp title:@"Help toogle" description:@"You don't need help anymore ? \nDisable it." arrowPosition:CRArrowPositionRight andColor:nil];
+    CRBubble *bubbleButton2 = [[CRBubble alloc] initWithAttachedView:_button2 title:@"2. The Second Button" description:@"Just click, nothing append" arrowPosition:CRArrowPositionLeft backgroundColor:[UIColor clearColor] fontColor:[UIColor blackColor] viewEffect:effect];
+    
+    UIBlurEffect *effect2 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    
+    CRBubble *bubbleButtonHelp = [[CRBubble alloc] initWithAttachedView:_buttonHelp title:@"Help toogle" description:@"You don't need help anymore ? \nDisable it." arrowPosition:CRArrowPositionRight backgroundColor:[UIColor clearColor] fontColor:[UIColor whiteColor] viewEffect:effect2];
     
     NSMutableArray *bubbleArray = [[NSMutableArray alloc] initWithObjects:bubbleButton1, bubbleButton2, bubbleButtonHelp, nil];
     
